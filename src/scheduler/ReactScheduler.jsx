@@ -26,16 +26,16 @@ const ReactScheduler = () => {
     { name: "Red",     id: "#f6b26b" }
   ];
 
-  const editEvent = async (e) => {
-    const form = [
-      { name: "Text", id: "text" },
-      { name: "Start", id: "start", type: "datetime", disabled: true },
-      { name: "End", id: "end", type: "datetime", disabled: true },
-      { name: "Resource", id: "resource", type: "select", options: resources },
-      { name: "Color", id: "backColor", type: "select", options: colors }
-    ];
+  const eventEditForm =  [
+    { name: "Text", id: "text" },
+    { name: "Start", id: "start", type: "datetime", disabled: true },
+    { name: "End", id: "end", type: "datetime", disabled: true },
+    { name: "Resource", id: "resource", type: "select", options: resources },
+    { name: "Color", id: "backColor", type: "select", options: colors }
+  ];
 
-    const modal = await DayPilot.Modal.form(form, e.data);
+  const editEvent = async (e) => {
+    const modal = await DayPilot.Modal.form(eventEditForm, e.data);
     if (modal.canceled) {
       return;
     }
@@ -44,19 +44,24 @@ const ReactScheduler = () => {
   };
 
   const onTimeRangeSelected = async (args) => {
-    const scheduler = args.control;
-    const modal = await DayPilot.Modal.prompt("Create a new event:", "Event 1");
+
+    const data = {
+      start: args.start,
+      end: args.end,
+      resource: args.resource,
+      id: DayPilot.guid(),
+      text: "Event"
+    };
+
+    const modal = await DayPilot.Modal.form(eventEditForm, data);
+
     scheduler.clearSelection();
+
     if (modal.canceled) {
       return;
     }
-    scheduler.events.add({
-      start: args.start,
-      end: args.end,
-      id: DayPilot.guid(),
-      resource: args.resource,
-      text: modal.result
-    });
+
+    scheduler.events.add(modal.result);
   };
 
   const onBeforeEventRender = (args) => {
