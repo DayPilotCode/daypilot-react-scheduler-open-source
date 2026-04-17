@@ -1,7 +1,7 @@
 /*
 DayPilot Scheduler Theme
-https://themes.daypilot.org/scheduler/theme/xcnkvp
-Theme Designer Version: 2025.12.31.41986
+https://themes.daypilot.org/scheduler/theme/2jjij3
+Theme Designer Version: 2026.04.01.75862
 */
 .dark_main:not(.default) {
   --dp-scheduler-border-color: #666666;
@@ -139,6 +139,15 @@ Theme Designer Version: 2025.12.31.41986
   bottom: 0;
   border-right: 1px solid var(--dp-scheduler-border-color);
 }
+.dark_direction_rtl .dark_timeheadergroup_inner, .dark_direction_rtl .dark_timeheadercol_inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--dp-scheduler-border-color);
+  border-right: none;
+}
 .dark_timeheadergroup_inner {
   border-bottom: 1px solid var(--dp-scheduler-border-color);
 }
@@ -242,6 +251,30 @@ Theme Designer Version: 2025.12.31.41986
   mask-size:100% 100%;
   background-image:none;
 }
+.dark_direction_rtl .dark_event_float_inner {
+  padding: var(--dp-scheduler-event-padding) 8px var(--dp-scheduler-event-padding) var(--dp-scheduler-event-padding);
+  position: relative;
+}
+.dark_direction_rtl .dark_event_float_inner:after {
+  content:"";
+  position:absolute;
+  top:calc(50% - 5px);
+  left: revert;
+  right:1px;
+  width:5px;
+  height:10px;
+  opacity:0.5;
+  background-color:currentColor;
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1IDEwJz48cGF0aCBkPSdNMCAwIEw1IDUgTDAgMTAgWicvPjwvc3ZnPg==);
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:100% 100%;
+  mask-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1IDEwJz48cGF0aCBkPSdNMCAwIEw1IDUgTDAgMTAgWicvPjwvc3ZnPg==);
+  mask-repeat:no-repeat;
+  mask-position:center;
+  mask-size:100% 100%;
+  background-image:none;
+}
 .dark_event_focus {
   outline: var(--dp-scheduler-focus-outline-color) 2px solid;
   z-index: 100;
@@ -253,6 +286,11 @@ Theme Designer Version: 2025.12.31.41986
 .dark_columnheader_splitter {
   box-sizing: border-box;
   border-right: 1px solid var(--dp-scheduler-border-color);
+}
+.dark_direction_rtl .dark_columnheader_splitter {
+  box-sizing: border-box;
+  border-left: 1px solid var(--dp-scheduler-border-color);
+  border-right: none;
 }
 .dark_columnheader_splitter:hover {
   background-color: var(--dp-scheduler-border-color);
@@ -288,6 +326,19 @@ Theme Designer Version: 2025.12.31.41986
   -webkit-mask-position:center;
   -webkit-mask-size:100% 100%;
   mask-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA4IDEwJz48cGF0aCBkPSdNIDEuNSAwLjUgTCA2LjUgNSBMIDEuNSA5LjUnIHN0eWxlPSdmaWxsOm5vbmU7c3Ryb2tlOmN1cnJlbnRDb2xvcjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLWxpbmVjYXA6YnV0dCcgLz48L3N2Zz4=);
+  mask-repeat:no-repeat;
+  mask-position:center;
+  mask-size:100% 100%;
+  background-image:none;
+}
+.dark_direction_rtl .dark_tree_image_expand {
+  opacity:0.5;
+  background-color:currentColor;
+  -webkit-mask-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA4IDEwJz48cGF0aCBkPSdNIDYuNSAwLjUgTCAxLjUgNSBMIDYuNSA5LjUnIHN0eWxlPSdmaWxsOm5vbmU7c3Ryb2tlOmN1cnJlbnRDb2xvcjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLWxpbmVjYXA6YnV0dCcgLz48L3N2Zz4=);
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:100% 100%;
+  mask-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA4IDEwJz48cGF0aCBkPSdNIDYuNSAwLjUgTCAxLjUgNSBMIDYuNSA5LjUnIHN0eWxlPSdmaWxsOm5vbmU7c3Ryb2tlOmN1cnJlbnRDb2xvcjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLWxpbmVjYXA6YnV0dCcgLz48L3N2Zz4=);
   mask-repeat:no-repeat;
   mask-position:center;
   mask-size:100% 100%;
@@ -365,10 +416,28 @@ Theme Designer Version: 2025.12.31.41986
   height:0;
   position: absolute;
 }
+.dark_direction_rtl .dark_link_arrow_right:before {
+  content: '';
+  border-width: 6px;
+  border-color: transparent var(--dp-scheduler-link-color) transparent transparent;
+  border-style: solid;
+  width: 0;
+  height:0;
+  position: absolute;
+}
 .dark_link_arrow_left:before {
   content: '';
   border-width: 6px;
   border-color: transparent var(--dp-scheduler-link-color) transparent transparent;
+  border-style: solid;
+  width: 0;
+  height:0;
+  position: absolute;
+}
+.dark_direction_rtl .dark_link_arrow_left:before {
+  content: '';
+  border-width: 6px;
+  border-color: transparent transparent transparent var(--dp-scheduler-link-color);
   border-style: solid;
   width: 0;
   height:0;

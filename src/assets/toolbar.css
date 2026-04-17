@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: start;
     flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
     border: 1px solid #E0E0E0;
 }
@@ -33,7 +34,6 @@
     color: #FFF;
 }
 
-
 .toolbar button {
     background-color: #666;
     color: #FFF;
@@ -57,7 +57,6 @@
 .toolbar select option {
     padding: 5px 10px;
 }
-
 
 .toolbar label {
     display: flex;
@@ -88,9 +87,13 @@
     border-color: #007BFF;
 }
 
-
 .toolbar-item {
     display: flex;
     align-items: center;
-    margin-right: 15px;
+}
+
+.toolbar-status {
+    color: #666;
+    font-size: 14px;
+    margin-left: auto;
 }
