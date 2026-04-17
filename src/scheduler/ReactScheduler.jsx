@@ -33,18 +33,13 @@ const ReactScheduler = () => {
     { name: "Color", id: "backColor", type: "select", options: colors }
   ];
 
-  const editEvent = async (eventData) => {
-    const modal = await DayPilot.Modal.form(eventEditForm, eventData);
+  const editEvent = async (e) => {
+    const modal = await DayPilot.Modal.form(eventEditForm, e.data);
     if (modal.canceled) {
       return;
     }
 
-    setEvents((current) => current.map((item) => {
-      if (item.id !== modal.result.id) {
-        return item;
-      }
-      return { ...item, ...modal.result };
-    }));
+    scheduler.events.update(modal.result);
   };
 
   const onTimeRangeSelected = async (args) => {
@@ -58,13 +53,13 @@ const ReactScheduler = () => {
 
     const modal = await DayPilot.Modal.form(eventEditForm, data);
 
-    args.control.clearSelection();
+    scheduler.clearSelection();
 
     if (modal.canceled) {
       return;
     }
 
-    setEvents((current) => current.concat(modal.result));
+    scheduler.events.add(modal.result);
   };
 
   const onBeforeEventRender = (args) => {
@@ -85,8 +80,8 @@ const ReactScheduler = () => {
         backColor: "#ffffff99",
         fontColor: "#999999",
         padding: 5,
-        onClick: async () => {
-          await editEvent(args.source.data);
+        onClick: async (args) => {
+          await editEvent(args.source);
         }
       }
     ];
