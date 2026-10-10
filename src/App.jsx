@@ -1,11 +1,16 @@
-import React from 'react';
-import './App.css';
+import './App.css'
 import ReactScheduler from "./scheduler/ReactScheduler.jsx";
+import BasicReactScheduler from "./examples/BasicReactScheduler.jsx";
 
-const App = () => {
+function App() {
+
   return (
-    <ReactScheduler />
-  );
+    <>
+      {new URLSearchParams(window.location.search).get('example') === 'basic'
+        ? <BasicReactScheduler />
+        : <ReactScheduler />}
+    </>
+  )
 }
 
-export default App;
+export default App

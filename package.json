@@ -1,7 +1,7 @@
 {
-  "name": "react-scheduler-open-source",
-  "private": true,
+  "name": "react-scheduler-with-horizontal-timeline-open-source",
   "license": "Apache-2.0",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@daypilot/daypilot-lite-react": "^5.3.0",
+    "@daypilot/daypilot-lite-react": "^6.1.0",
     "react": "^19.2.2",
     "react-dom": "^19.2.2"
   },

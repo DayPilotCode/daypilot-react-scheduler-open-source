@@ -65,7 +65,6 @@ const ReactScheduler = () => {
   const onBeforeEventRender = (args) => {
     if (!args.data.backColor) {
       args.data.backColor = "#93c47d";
-      args.data.fontColor = "#ffffff";
     }
 
     args.data.borderColor = "darker";
@@ -75,7 +74,7 @@ const ReactScheduler = () => {
         top: "calc(50% - 15px)",
         width: 30,
         height: 30,
-        symbol: "/icons/daypilot.svg#edit",
+        symbol: "./icons/daypilot.svg#edit",
         borderRadius: "50%",
         backColor: "#ffffff99",
         fontColor: "#999999",
